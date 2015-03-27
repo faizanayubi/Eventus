@@ -1,17 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <title>Eventus</title>
-        <link type="text/css" href="/fonts/LuxiSans.css" rel="stylesheet" />
-        <style type="text/css">
-            h1
-            {
-                font-family: "LuxiSans";
-            }
-        </style>
+        <title>Bootstrap 101 Template </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="css/whhg.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]> <script src="../../assets/js/html5shiv.js"></script> <script src="../../assets/js/respond.min.js"></script> <![endif]-->
+        <!--Google maps API linl-->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCsbzuJDUEOoq-jS1HO-LUXW4qo0gW9FNs&amp;sensor=false"></script>
+        <!--Your map settings script-->
+        <script type="text/javascript" src="js/map.js"></script>
+        <!--jQuery-->
+        <script type="text/javascript" src="../../ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/owl.carousel.js"></script>
+        <script type="text/javascript" src="js/pxgradient-1.0.2.jquery.html"></script>
+
     </head>
-    <body>
-        {include navigation.html}
-        {ayield action}
+    <body onload="initialize()">
+        <!--autorization modal-->
+        <div class="modal fade" id="autorization">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Autorization</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" />
+                                    Check me out
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="1.html" class="btn btn-danger btn-sm">Sign in</a>
+                        <a href="1.html" class="btn btn-primary btn-sm">Create account</a>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!--map-->
+        <div id="map_canvas" class="map"></div>
+        <!--/map-->
+        <div class="row site">
+            
+            {include navigation.html}
+            {ayield action}
+            
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!--   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.js"></script>
     </body>
 </html>
