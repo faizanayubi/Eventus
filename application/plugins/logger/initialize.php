@@ -1,5 +1,5 @@
 <?php
-
+/*
 // initialize logger
 include("logger.php");
 
@@ -8,6 +8,8 @@ $logger = new Logger(array(
 ));
 
 // log cache events
+
+
 
 Framework\Events::add("framework.cache.initialize.before", function($type, $options) use ($logger) {
     $logger->log("framework.cache.initialize.before: " . $type);
@@ -106,3 +108,5 @@ Framework\Events::add("framework.view.construct.after", function($file, $templat
 Framework\Events::add("framework.view.render.before", function($file) use ($logger) {
     $logger->log("framework.view.render.before: " . $file);
 });
+ * 
+ */

@@ -3,9 +3,7 @@
 define("DEBUG", TRUE);
 
 // 1. define the default path for includes
-//define("APP_PATH", dirname(dirname(__FILE__)));
-
-define("APP_PATH", str_replace(DIRECTORY_SEPARATOR, "/", dirname(dirname(__FILE__))));
+define("APP_PATH", dirname(__FILE__));
 
 try {
 
@@ -21,7 +19,7 @@ try {
     });
 
     // 2. load the Core class that includes an autoloader
-    require("../framework/core.php");
+    require("framework/core.php");
     Framework\Core::initialize();
 
     // plugins
@@ -60,7 +58,7 @@ try {
     Framework\Registry::set("router", $router);
 
     // include custom routes 
-    include("routes.php");
+    include("public/routes.php");
 
     // 8. dispatch the current request 
     $router->dispatch();
