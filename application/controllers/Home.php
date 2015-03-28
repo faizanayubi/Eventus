@@ -10,8 +10,7 @@ use Framework\Controller as Controller;
 class Home extends Controller {
 
     function index() {
-        echo 'home';
-        $view = $this->getActionView();
+        
     }
-
+    
 }

@@ -61,6 +61,7 @@ namespace Framework {
                     }
 
                     $this->$property = $arguments[0];
+                    //var_dump($this);
                     return $this;
                 }
             }

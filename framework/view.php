@@ -54,9 +54,9 @@ namespace Framework {
             }
 
             return $this
-                            ->template
-                            ->parse(file_get_contents($this->file))
-                            ->process($this->data);
+                ->template
+                ->parse(file_get_contents($this->file))
+                ->process($this->data);
         }
 
         public function get($key, $default = "") {

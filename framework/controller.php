@@ -77,33 +77,47 @@ namespace Framework {
             parent::__construct($options);
             Events::fire("framework.controller.construct.before", array($this->name));
 
-            if ($this->willRenderLayoutView) {
-                $defaultPath = $this->defaultPath;
-                $defaultLayout = $this->defaultLayout;
-                $defaultExtension = $this->defaultExtension;
+            $defaultContentType = $this->defaultContentType;
+            switch ($defaultContentType) {
+                case 'text/html':
+                    if ($this->willRenderLayoutView) {
+                        $defaultPath = $this->defaultPath;
+                        $defaultLayout = $this->defaultLayout;
+                        $defaultExtension = $this->defaultExtension;
 
-                $view = new View(array(
-                    "file" => APP_PATH . "/{$defaultPath}/{$defaultLayout}.{$defaultExtension}"
-                ));
+                        $view = new View(array(
+                            "file" => APP_PATH . "/{$defaultPath}/{$defaultLayout}.{$defaultExtension}"
+                        ));
 
-                $this->layoutView = $view;
-            }
+                        $this->layoutView = $view;
+                    }
 
-            if ($this->willRenderActionView) {
-                $router = Registry::get("router");
-                $controller = $router->controller;
-                $action = $router->action;
+                    if ($this->willRenderActionView) {
+                        $router = Registry::get("router");
+                        $controller = $router->controller;
+                        $action = $router->action;
 
-                $view = new View(array(
-                    "file" => APP_PATH . "/{$defaultPath}/{$controller}/{$action}.{$defaultExtension}"
-                ));
+                        $view = new View(array(
+                            "file" => APP_PATH . "/{$defaultPath}/{$controller}/{$action}.{$defaultExtension}"
+                        ));
 
-                $this->actionView = $view;
+                        $this->actionView = $view;
+                    }
+
+                    break;
+                    
+                case 'application/json':
+                    echo 'JSON Data';
+                    break;
+
+                default:
+                    die('Error. Invalid Content Type');
+                    break;
             }
 
             Events::fire("framework.controller.construct.after", array($this->name));
         }
-        
+
         protected function getName() {
             if (empty($this->_name)) {
                 $this->_name = get_class($this);
