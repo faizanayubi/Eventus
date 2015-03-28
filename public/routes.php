@@ -49,6 +49,11 @@ $routes = array(
         "action" => "friend"
     ),
     array(
+        "pattern" => "fonts/:id",
+        "controller" => "files",
+        "action" => "fonts"
+    ),
+    array(
         "pattern" => "thumbnails/:id",
         "controller" => "files",
         "action" => "thumbnails"
