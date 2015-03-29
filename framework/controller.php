@@ -76,8 +76,23 @@ namespace Framework {
         public function __construct($options = array()) {
             parent::__construct($options);
             Events::fire("framework.controller.construct.before", array($this->name));
+            
+            $parameters = $this->parameters;
+            
+            if (sizeof($parameters) > 0) {
+                switch ($parameters[0]) {
+                    case 'json':
+                        $defaultContentType = 'application/json';
+                        break;
 
-            $defaultContentType = $this->defaultContentType;
+                    default:
+                        $defaultContentType = $this->defaultContentType;
+                        break;
+                }
+            }  else {
+                $defaultContentType = $this->defaultContentType;
+            }
+            
             switch ($defaultContentType) {
                 case 'text/html':
                     if ($this->willRenderLayoutView) {
