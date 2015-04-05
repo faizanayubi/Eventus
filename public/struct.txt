@@ -1,0 +1,88 @@
+Pages
+
+/home
+- contains information to login the user and site info
+- signedin users location map will show based on
+	- user current location
+	- events from past searched location
+	- interests
+	- freinds event going
+	- feed for pic of frnds
+	- current frnds location on map
+
+/login
+- Fetch data from API 
+	- Facebook
+		- freindlist
+		- events
+		- email
+		- location
+		- interests
+		- Post (optional)
+			- Event entry
+			- rsvp status
+			- photo, video
+	- Twitter
+		- followers
+		- interests
+		- email
+		- location
+		- Post (optional)
+			- Event entry
+			- rsvp status
+			- photo, video
+	- Google
+		- followers
+		- interests
+		- email
+		- location
+		- Post (optional)
+			- Event entry
+			- rsvp status
+			- photo, video
+
+
+/activity(type)/:id(or title)
+- event
+	- event info with map
+	- show time and distance to reach there
+	- livestream with youtube or ustream
+- trip
+	- trip info with map
+	- location to visit
+	- restaurants and hotels info
+- message organiser
+- after show attendees
+- add mode to travel, stay and eat
+- during activity feed
+- engage conversation(optional)
+
+
+/user/:id(or username)
+- profile
+- notifications
+- events
+
+Activity
+- events
+- trips
+
+Features
+- Include events from history which had a particular location
+- App changes theme with festivals
+- event for celebrating festivals and holidays
+- mode for limiting free passes and then pay
+
+Services to connect
+- Food/Catering
+- Venue Expenses
+- Floral decorator
+- Music & entertainment
+- Rentals
+- Audio/visual
+- on-site transport
+- travels/hotels
+- marketing social media, email, ads
+- printing
+- photographer
+
